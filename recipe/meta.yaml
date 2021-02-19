@@ -1,7 +1,6 @@
 {% set name = "pyiron_gpl" %}
 {% set version = "0.0.1" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,7 +10,7 @@ source:
   sha256: bf96d3d94251f0fa67f4dc98ac2abb9ca24cb0bdb0240a9f8f463033502cf7c2
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -45,4 +44,8 @@ about:
 
 extra:
   recipe-maintainers:
+    - pyiron-runner
     - jan-janssen
+    - pmrv
+    - muh-hassani
+    - niklassiemer
