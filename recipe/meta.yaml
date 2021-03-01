@@ -1,5 +1,5 @@
 {% set name = "pyiron_gpl" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyiron-gpl-{{ version }}.tar.gz
-  sha256: bf96d3d94251f0fa67f4dc98ac2abb9ca24cb0bdb0240a9f8f463033502cf7c2
+  sha256: e944097e12accba7eca73e618cc2c9e12fd5120575d2acb8757a95d20a25fa8e
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
