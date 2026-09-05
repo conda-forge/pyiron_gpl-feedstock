@@ -15,15 +15,15 @@ Documentation: https://github.com/pyiron/pyiron_gpl
 
 Additional modules for the pyiron IDE licensed under GPLv3
 
-
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11977&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyiron_gpl-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/pyiron_gpl-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/pyiron_gpl-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -34,7 +34,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyiron_gpl-green.svg)](https://anaconda.org/conda-forge/pyiron_gpl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyiron_gpl.svg)](https://anaconda.org/conda-forge/pyiron_gpl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyiron_gpl.svg)](https://anaconda.org/conda-forge/pyiron_gpl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyiron_gpl.svg)](https://anaconda.org/conda-forge/pyiron_gpl) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyiron__gpl-green.svg)](https://anaconda.org/conda-forge/pyiron_gpl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyiron_gpl.svg)](https://anaconda.org/conda-forge/pyiron_gpl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyiron_gpl.svg)](https://anaconda.org/conda-forge/pyiron_gpl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyiron_gpl.svg)](https://anaconda.org/conda-forge/pyiron_gpl) |
 
 Installing pyiron_gpl
 =====================
@@ -46,31 +46,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyiron_gpl` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install pyiron_gpl
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install pyiron_gpl
 ```
 
-It is possible to list all of the versions of `pyiron_gpl` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add pyiron_gpl
+# for installing globally
+pixi global install pyiron_gpl
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `pyiron_gpl` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search pyiron_gpl --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search pyiron_gpl --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search pyiron_gpl --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -82,6 +124,8 @@ mamba repoquery whoneeds pyiron_gpl --channel conda-forge
 # List dependencies of `pyiron_gpl`:
 mamba repoquery depends pyiron_gpl --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -105,12 +149,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -137,7 +181,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/pyiron_gpl-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
